@@ -1,0 +1,37 @@
+import java.util.Random;
+
+public class Die {
+  private int value;
+  private Random rand;
+
+  public Die() {
+    value = 0;
+    rand = new Random();
+  }
+  public void roll() {
+    value = rand.nextInt(6) + 1;
+  }
+  public boolean equals(Die die2) {
+    return this.value == die2.value;
+  }
+  public String toString() {
+    switch (value) {
+      case 1:
+        return "one";
+      case 2:
+        return "two";
+      case 3:
+        return "three";
+      case 4:
+        return "four";
+      case 5:
+        return "five";
+      case 6:
+        return "six";
+      default: return "error";
+    }
+  }
+  public int getValue() {
+    return value;
+  }
+}

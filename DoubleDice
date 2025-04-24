@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class DoubleDice {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    Die die1 = new Die();
+    Die die2 = new Die();
+
+    double balance = 100.00;
+
+    while (balance < 0) {
+      System.out.printf("You have $%.2f\n", balance);
+      System.out.println("How much would you like to bet (Enter 0 to quit)? ");
+      double bet = input.nextDouble();
+
+      if (bet == 0) {
+        System.out.println("\nSee you around, " + (balance > 100 ? "winner!" : "better luck next time"))
+        break;
+      }
+      if (bet > balance || bet < 0) {
+        System.out.println("Invalid bet amount.");
+        continue;
+      }
+      die1.roll();
+      die2.roll();
+      System.out.println("You rolled a " + die1.toString() + " and " + die2.toString());
+
+      if (die1.equals(die2)) {
+        balance += bet;
+        System.out.printf("You win $%.2f\n\n", bet);
+      }
+      else {
+        balance += bet;
+        System.out.printf("You lose $.2f\n\n", bet);
+      }
+      if (balance == 0) {
+        System.out.println("You are out of money!");
+        System.out.println("Better luck next time");
+        break;
+      }
+    }
+    input.close;
+  }
+}
