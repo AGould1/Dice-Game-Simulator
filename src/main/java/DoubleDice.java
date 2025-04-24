@@ -8,13 +8,13 @@ public class DoubleDice {
 
     double balance = 100.00;
 
-    while (balance < 0) {
+    while (balance > 0) {
       System.out.printf("You have $%.2f\n", balance);
       System.out.println("How much would you like to bet (Enter 0 to quit)? ");
       double bet = input.nextDouble();
 
       if (bet == 0) {
-        System.out.println("\nSee you around, " + (balance > 100 ? "winner!" : "better luck next time"))
+        System.out.println("\nSee you around, " + (balance > 100 ? "winner!" : "better luck next time"));
         break;
       }
       if (bet > balance || bet < 0) {
@@ -30,8 +30,8 @@ public class DoubleDice {
         System.out.printf("You win $%.2f\n\n", bet);
       }
       else {
-        balance += bet;
-        System.out.printf("You lose $.2f\n\n", bet);
+        balance -= bet;
+        System.out.printf("You lose $%.2f\n\n", bet);
       }
       if (balance == 0) {
         System.out.println("You are out of money!");
@@ -39,6 +39,6 @@ public class DoubleDice {
         break;
       }
     }
-    input.close;
+    input.close();
   }
 }
