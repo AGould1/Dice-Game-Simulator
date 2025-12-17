@@ -1,21 +1,21 @@
 import java.util.Random;
 
-public class Die {
-  private int value;
-  private Random rand;
+public class Die { // Created a class named Die
+  private int value; // Created a private int variable named value
+  private Random rand; // Created a private Random variable named rand
 
-  public Die() {
-    value = 0;
-    rand = new Random();
+  public Die() { // Created a constructor method for the Die class
+    value = 0; // Assigned value to 0
+    rand = new Random(); //Instantiated rand as a new Random object
   }
-  public void roll() {
-    value = rand.nextInt(6) + 1;
+  public void roll() { // Created a roll method for the Die class
+    value = rand.nextInt(6) + 1; // Simulates a roll between 1 and 6
   }
-  public boolean equals(Die die2) {
-    return this.value == die2.value;
+  public boolean equals(Die die2) { // Created an equals method for the Die class
+    return this.value == die2.value; // Returns true if both values are equal, false otherwise
   }
-  public String toString() {
-    switch (value) {
+  public String toString() { // Created toString method for the Die class
+    switch (value) { // Switch statement to return the string "one" though "six" depending on the value of the die
       case 1:
         return "one";
       case 2:
@@ -32,6 +32,6 @@ public class Die {
     }
   }
   public int getValue() {
-    return value;
+    return value; // Returns the value of the die
   }
 }
